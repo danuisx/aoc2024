@@ -46,8 +46,6 @@ def format_file(file, dodont):
     # since the numbers are considered strings we need to convert to ints for multiplication purposes
     mult_list = list_to_int(mult_list)
 
-    #print(formatted)
-    #print(mult_list)
     return mult_list
 
 # goes through each item in two-dimensional mult_list and converts it from string to int
@@ -67,7 +65,6 @@ def multiply_list(mult_list):
     total = 0
     for i in mult_list:
         total+= i[0] * i[1]
-        #print(total)
     
     return total
 
