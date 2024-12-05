@@ -125,11 +125,54 @@ def check_xmas2(letters):
     
     return matches
 
+def new_check_direction(matrix, position, direction, index):
+    letter = matrix[position[0]+direction[0]][position[1]+direction[1]]
+    if letter == word[index] and letter is not None:
+            print("it worked again", letter)
+            return True, [position[0]+direction[0], position[1]+direction[1]], direction
+    return False, position, None
+
+def new_check_xmas(letters):
+    index = matches = x = y = z = 0
+    correct = False
+    while x < len(letters):
+        print("loop line")
+        while y < len(letters[x]):
+            print(letters[x][y])
+            if letters[x][y] == word[index]:
+                print("match", index)
+                letter_index = [x, y]
+                correct = True
+                index+=1
+                direction = None
+
+                while z < len(directions):
+                    correct, letter_index, direction = new_check_direction(letters, letter_index, directions[z], index)
+                    if direction is not None:
+                        index+=1
+                        break
+                    z+=1
+                
+                while index < len(word) and correct:
+                    correct, letter_index, direction = new_check_direction(letters, letter_index, direction, index)
+
+
+                if correct:
+                    print("added match")
+                    matches+=1
+                    correct = False
+            index = 0
+            y+=1
+        y = 0
+        x+=1
+    
+    return matches
+
 # part 1
 def part1(file):
     matrix = format_file(file)
 
-    matches = check_xmas2(matrix)
+    matches = new_check_xmas(matrix)
     print("total XMAS:", matches)
 
 # why do nested list comprehensions not scoped in classes
