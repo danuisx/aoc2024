@@ -7,3 +7,10 @@ these are my solutions to this year's [Advent of Code](https://adventofcode.com/
 | 1       | ✔          |              | ✔         |              |
 | 2       |  ✔         |              |  ✔        |  ❌          |
 | 3       |  ✔         |              |  ✔        |              |
+| 4       |  ✔         | technically no but i looked at the subreddit |           |              |
+| 5       |            |              |           |              |
+| 6       |            |              |           |              |
+| 7       |            |              |           |              |
+| 8       |            |              |           |              |
+| 9       |            |              |           |              |
+| 10      |            |              |           |              |
